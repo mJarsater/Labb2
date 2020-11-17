@@ -8,7 +8,7 @@ class IntVector
 {
 public:
 
-    IntVector(int* i) :data(i) {};
+    
 
     // Standard-konstruktor
     IntVector();
@@ -17,10 +17,12 @@ public:
     IntVector(std::initializer_list<int>);
 
 
-    // Copy-konstuktor
+    // Copy-konstuktor (Const)
     IntVector(const IntVector& other);
 
     IntVector(IntVector& other);
+
+
     // Returnera storleken
     int const size();
 
@@ -32,7 +34,7 @@ public:
 
 
     // Tilldelnings kostruktor (?)
-    IntVector operator=(const IntVector& other);
+    const IntVector operator=(const IntVector& other);
 
 private:
     int length;

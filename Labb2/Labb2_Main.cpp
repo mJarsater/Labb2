@@ -39,7 +39,7 @@ int main()
 	std::cout << "vek4: " << vek4 << std::endl;
 
 	vek4.push_back(46);
-
+	//TODO - Fixa const
 	IntVector vek5(vek4);
 	std::cout << "vek5, size: " << vek5.size() << std::endl;
 	std::cout << "vek5[5]: " << vek5[5] << std::endl;

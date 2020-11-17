@@ -11,14 +11,17 @@ IntVector::IntVector() :length(0), data(new int[length])
 }
 
 // Konstruktor för { element }
-IntVector::IntVector(std::initializer_list<int>)
+IntVector::IntVector(std::initializer_list<int> list) :length(list.size()), data(new int[length])
 {
-
+	std::initializer_list<int>::iterator it = list.begin();
+	for (int i = 0; i < length; i++)
+	{
+		data[i] = *it++;
+	}
 }
 
-
-// Copy-konstuktor
-IntVector::IntVector(const IntVector& other):length(other.length)
+// Copy-konstuktor (Const)
+IntVector::IntVector(IntVector& other):length(other.length)
 {
 	for (int i = 0; i < length; i++)
 		data[i] = other.data[i];
@@ -58,7 +61,7 @@ int& const IntVector::operator[](int index)
 }
 
 // Tilldelnings-operator
-IntVector IntVector::operator=(const IntVector& other)
+IntVector const IntVector::operator=(const IntVector& other)
 {
 	if (this != &other)
 	{
