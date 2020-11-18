@@ -20,12 +20,6 @@ IntVector::IntVector(std::initializer_list<int> list) :length(list.size()), data
 	}
 }
 
-// Copy-konstuktor (Const)
-IntVector::IntVector(IntVector& other):length(other.length)
-{
-	for (int i = 0; i < length; i++)
-		data[i] = other.data[i];
-}
 
 // Copy-konstuktor
 IntVector::IntVector(IntVector& other) :length(other.length)
@@ -75,4 +69,11 @@ IntVector const IntVector::operator=(const IntVector& other)
 }
 
 
-// Cout operator
+
+std::ostream& operator<<(std::ostream os, IntVector& t)
+{
+	// TODO: insert return statement here
+	for (int i = 0; i < t.size(); i++)
+		os << t.data;
+	return os;
+}

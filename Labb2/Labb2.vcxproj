@@ -143,7 +143,7 @@
     <ClCompile Include="Labb2_Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IntVector.h" />
+    <ClCompile Include="IntVector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

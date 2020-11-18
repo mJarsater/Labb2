@@ -20,6 +20,8 @@ public:
     // Copy-konstuktor (Const)
     IntVector(const IntVector& other);
 
+
+    // Copy-konstuktor
     IntVector(IntVector& other);
 
 
@@ -39,5 +41,6 @@ public:
 private:
     int length;
     int* data;
-    
+    friend std::ostream& operator<<(std::ostream,
+         IntVector&);
 };
