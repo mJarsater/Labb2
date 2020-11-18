@@ -21,18 +21,14 @@ public:
     IntVector(const IntVector& other);
 
 
-    // Copy-konstuktor
-    IntVector(IntVector& other);
-
-
     // Returnera storleken
-    int const size();
+    int size() const;
 
     // Lägg till int
     void push_back(int element);
 
     // Index operator
-    int& const operator[](int index);
+    int&  operator[](int index) const;
 
 
     // Tilldelnings kostruktor (?)

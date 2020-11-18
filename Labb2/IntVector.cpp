@@ -22,7 +22,7 @@ IntVector::IntVector(std::initializer_list<int> list) :length(list.size()), data
 
 
 // Copy-konstuktor
-IntVector::IntVector(IntVector& other) :length(other.length)
+IntVector::IntVector(const IntVector& other) :length(other.length), data(new int[length])
 {
 	for (int i = 0; i < length; i++)
 		data[i] = other.data[i];
@@ -31,7 +31,7 @@ IntVector::IntVector(IntVector& other) :length(other.length)
 
 
 // Returnera Storleken på listan
-int const IntVector::size() {
+int IntVector::size()const {
 	return length;
 }
 
@@ -47,7 +47,7 @@ void IntVector::push_back(int element)
 
 
 // Index-operator
-int& const IntVector::operator[](int index)
+int& IntVector::operator[](int index)const
 {
 	if (index < 0 || index >= length)
 		throw std::out_of_range("Index out of bounds");
