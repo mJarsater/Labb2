@@ -8,8 +8,6 @@ class IntVector
 {
 public:
 
-    
-
     // Standard-konstruktor
     IntVector();
 
@@ -34,9 +32,11 @@ public:
     // Tilldelnings kostruktor (?)
     const IntVector operator=(const IntVector& other);
 
+    ~IntVector();
+
 private:
     int length;
     int* data;
-    friend std::ostream& operator<<(std::ostream,
-         IntVector&);
+    friend std::ostream& operator<<(std::ostream&,
+        const IntVector&);
 };

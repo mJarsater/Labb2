@@ -13,10 +13,10 @@ IntVector::IntVector() :length(0), data(new int[length])
 // Konstruktor för { element }
 IntVector::IntVector(std::initializer_list<int> list) :length(list.size()), data(new int[length])
 {
-	std::initializer_list<int>::iterator it = list.begin();
-	for (int i = 0; i < length; i++)
+	int j = 0;
+	for (auto i: list)
 	{
-		data[i] = *it++;
+		data[j++] = i;
 	}
 }
 
@@ -41,8 +41,11 @@ void IntVector::push_back(int element)
 {
 	length += 1;
 
+
+	//Allokera nytt utrymme som är 1 större än det gamla + kopiera.
+	//Avalloker det gaml utrymmet.
 	data[length - 1] = element;
-	// Lägg till i arrayen
+	
 }
 
 
@@ -68,12 +71,18 @@ IntVector const IntVector::operator=(const IntVector& other)
 	return *this;
 }
 
+//Destruktor
+
+IntVector:: ~IntVector() {
+	delete[] data;
+}
 
 
-std::ostream& operator<<(std::ostream os, IntVector& t)
+
+std::ostream& operator<<(std::ostream& os, const IntVector& t)
 {
 	// TODO: insert return statement here
 	for (int i = 0; i < t.size(); i++)
-		os << t.data;
+		os << t.data[i];
 	return os;
 }
