@@ -1,6 +1,8 @@
 // Martin Jarsäter
 // Labb2, IntVector.h – klassdefinition
-#pragma once
+#ifndef INTVECTOR_H
+#define INTVECTOR_H
+
 #include <iostream>
 
 using namespace std;
@@ -40,3 +42,5 @@ private:
     friend std::ostream& operator<<(std::ostream&,
         const IntVector&);
 };
+
+#endif INTVECTOR_H

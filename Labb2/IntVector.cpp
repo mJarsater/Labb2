@@ -40,11 +40,19 @@ int IntVector::size()const {
 void IntVector::push_back(int element)
 {
 	length += 1;
+	int* temp = new int[length];
+	
+	for (int i = 0; i < length; i++) {
+		temp[i] = data[i];
+		
+	}
+	delete[] data;
+	data = temp;
+	data[length - 1] = element;
 
 
 	//Allokera nytt utrymme som är 1 större än det gamla + kopiera.
-	//Avalloker det gaml utrymmet.
-	data[length - 1] = element;
+	//Avalloker det gamla utrymmet.
 	
 }
 
@@ -83,6 +91,6 @@ std::ostream& operator<<(std::ostream& os, const IntVector& t)
 {
 	// TODO: insert return statement here
 	for (int i = 0; i < t.size(); i++)
-		os << t.data[i];
+		os << t.data[i] <<" ";
 	return os;
 }

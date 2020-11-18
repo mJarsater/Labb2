@@ -41,7 +41,7 @@ int main()
 	vek4.push_back(46);
 	
 	const IntVector vek5(vek4);
-	std::cout << "vek5, size: " << vek5 << std::endl;
+	std::cout << "vek5, size: " << vek5.size() << std::endl;
 	std::cout << "vek5[5]: " << vek5[5] << std::endl;
 	std::cout << "vek5: " << vek5 << std::endl;
 
